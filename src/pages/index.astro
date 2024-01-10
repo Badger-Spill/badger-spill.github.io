@@ -4,6 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import madisonImage from "../assets/madison.jpg";
 import Input from "../components/Input.astro";
 import Textarea from "../components/Textarea.astro";
+import Button from "../components/Button.astro";
 ---
 
 <BaseLayout>
@@ -45,6 +46,9 @@ import Textarea from "../components/Textarea.astro";
         label="Message"
         placeholder="Write your message here. A volunteer badger will reply to your anonymous message!"
       />
+    </div>
+    <div class="flex flex-row-reverse mt-4">
+      <Button id="submit" label="Spill!" />
     </div>
   </section>
 </BaseLayout>

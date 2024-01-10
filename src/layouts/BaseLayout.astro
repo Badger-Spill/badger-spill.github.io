@@ -3,7 +3,7 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 ---
 
-<html class="bg-zinc-900 mx-auto max-w-[85rem]">
+<html class="bg-zinc-900 mx-auto max-w-[85rem] px-4 sm:px-8">
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,7 +11,7 @@ import Header from "../components/Header.astro";
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
     </head>
     <Header />
-    <main class="px-4 sm:px-8">
+    <main>
       <slot />
     </main>
     <Footer />
