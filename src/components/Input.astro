@@ -1,0 +1,48 @@
+---
+interface Props {
+  id: string;
+  label: string;
+  type?: astroHTML.JSX.HTMLInputTypeAttribute;
+  placeholder?: string;
+}
+const { id, label, type, placeholder } = Astro.props;
+---
+
+<div class="max-w-xs">
+  <div>
+    <label for={id} class="mb-1 block text-sm font-medium text-zinc-400">
+      Email
+    </label>
+    <div class="relative">
+      {
+        type == "email" && (
+          <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center px-2.5">
+            {type == "email" && (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-5 w-5 text-zinc-500"
+              >
+                {" "}
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                />{" "}
+              </svg>
+            )}
+          </div>
+        )
+      }
+      <input
+        type={type}
+        id={id}
+        class="block w-full rounded-md border-zinc-500 pl-10 bg-transparent placeholder-zinc-500 text-zinc-300"
+        placeholder={placeholder}
+      />
+    </div>
+  </div>
+</div>
