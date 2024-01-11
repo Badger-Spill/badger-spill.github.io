@@ -3,7 +3,7 @@ import { Image } from 'astro:assets'
 import logo from '../assets/logo.png'
 ---
 
-<header class="py-4 mb-16">
+<header class="py-4 mb-8 sm:mb-16">
   <!-- 
     Uses flexbox for screens >= small, uses box layout for screens < small 
     This causes the navbar to stack under the logo on screens < small
@@ -13,7 +13,7 @@ import logo from '../assets/logo.png'
     class="mx-auto sm:flex sm:flex-wrap sm:items-center sm:justify-between"
     aria-label="navigation"
   >
-    <a href="#">
+    <a href="/">
       <Image src={logo} alt="Badger Spill" class=" max-w-32">
     </a>
     <div
@@ -21,19 +21,19 @@ import logo from '../assets/logo.png'
     >
       <a
         class="font-medium text-zinc-200 hover:text-primary-200"
-        href="#"
+        href="/"
       >
         Home
       </a>
       <a
         class="font-medium text-zinc-200 hover:text-primary-200"
-        href="#"
+        href="/resources"
       >
         Resources
       </a>
       <a
         class="font-medium text-zinc-200 hover:text-primary-200 "
-        href="#"
+        href="/testimonials"
       >
         Testimonials
       </a>

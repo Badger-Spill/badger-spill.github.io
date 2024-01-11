@@ -1,0 +1,24 @@
+---
+import Accordion from "../components/Accordion.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <div class="text-center mb-8">
+    <h1 class="text-3xl font-bold tracking-tight text-zinc-100 sm:text-5xl p-1">
+      Looking for resources?
+    </h1>
+    <h1 class="text-3xl font-bold tracking-tight sm:text-5xl bg-gradient-to-r from-primary-200 to-primary-400 text-transparent bg-clip-text p-1">
+      We got 'em.
+    </h1>
+    <!-- This should probably be refactored so that opening an accordion only affects the height of its column. -->
+    <div class="flex flex-col items-center gap-6 max-w-2xl mx-auto sm:items-start sm:grid sm:grid-cols-12 sm:max-w-4xl my-16 text-left">
+      <Accordion summary="Crisis Resources">Hello</Accordion>
+      <Accordion summary="Academics">Hello</Accordion>
+      <Accordion summary="Mental Health">Hello</Accordion>
+      <Accordion summary="LGBTQIA+">Hello</Accordion>
+      <Accordion summary="Death and Grief">Hello</Accordion>
+      <Accordion summary="Discrimination">Hello</Accordion>
+    </div>
+  </div>
+</BaseLayout>

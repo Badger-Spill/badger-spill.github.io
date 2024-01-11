@@ -13,9 +13,7 @@ import Button from "../components/Button.astro";
       <div class="lg:col-span-5 lg:flex lg:flex-col lg:justify-center">
         <h1 class="text-4xl font-bold tracking-tight text-zinc-100 sm:text-5xl">
           Need to vent to a fellow badger? <span
-            class="bg-gradient-to-r from-primary-200 to-primary-400 text-transparent bg-clip-text"
-            >Spill it!</span
-          >
+            class="bg-gradient-to-r from-primary-200 to-primary-400 text-transparent bg-clip-text">Spill it!</span>
         </h1>
         <p class="mt-6 text-base font-normal leading-7 text-zinc-400">
           Talk anonymously with other badger students for advice, support, or
@@ -33,7 +31,7 @@ import Button from "../components/Button.astro";
       </div>
     </div>
   </section>
-  <section id="spill-form" class="my-16">
+  <section id="spill-form" class="mt-16 mb-8">
     <div class="w-full sm:max-w-sm">
       <Input
         id="email"
@@ -49,9 +47,8 @@ import Button from "../components/Button.astro";
         placeholder="Write your message here. A volunteer badger will reply to your anonymous message!"
       />
     </div>
-    <p class="mt-2 text-xs text-zinc-400">Your message will be sent anonymously. Badger Spill reserves the right to break confidentiality under circumstances where we believe your safety or the safety of others may be at risk.</p>
-    <div class="flex justify-between items-center mt-6">
-      <p class="text-zinc-400">By submitting this form, you agree to our <a href="#" class="underline">Terms of Service</a>.</p>
+    <p class="mt-2 text-xs text-zinc-400">Your message will be sent anonymously. Badger Spill reserves the right to break confidentiality under circumstances where we believe your safety or the safety of others may be at risk. By submitting this form, you agree to our <a href="/terms-of-use" class="underline">Terms of Use</a>.</p>
+    <div class="flex flex-row-reverse items-center mt-6">
       <Button id="submit" label="Spill ☕ 🫖" />
     </div>
   </section>
