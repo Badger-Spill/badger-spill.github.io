@@ -1,5 +1,18 @@
-<footer class="mb-8 flex flex-col gap-2">
-    <hr class="my-8 h-px border-0 bg-zinc-700" />
+---
+import FacebookLogo from "./social-logos/FacebookLogo.astro";
+import TwitterLogo from "./social-logos/TwitterLogo.astro";
+---
+
+<hr class="my-8 h-px border-0 bg-zinc-700" />
+<footer class="mb-8 flex flex-col gap-4">
+  <div>
     <p class="text-sm text-zinc-400">Badger Spill is made possible by funding from Associated Students of Madison.</p>
-    <p class="text-sm text-zinc-400">Badger Spill is not a crisis or emergency resource. If you or a friend are in crisis, <a href="/resources" class="underline">click here for a list of crisis resources</a>.</p>
+    <p class="text-sm text-zinc-400">Badger Spill is not a crisis or emergency resource. If you or a friend are in a crisis, <a href="/resources" class="underline">click here for a list of crisis resources</a> or call 911.</p>
+  </div>
+  
+  <!-- Social Links -->
+  <div class="fill-zinc-400 flex flex-row gap-5">
+    <a href="https://www.facebook.com/BadgerSpill"><FacebookLogo /></a>
+    <a href="https://twitter.com/badgerspill"><TwitterLogo /></a>
+  </div>
 </footer>
