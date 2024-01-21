@@ -1,6 +1,12 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+
+interface Props {
+  includeCaptcha?: boolean
+}
+
+const { includeCaptcha } = Astro.props;
 ---
 
 <html class="bg-zinc-900 mx-auto max-w-[85rem] px-4 sm:px-8">
@@ -11,6 +17,9 @@ import Header from "../components/Header.astro";
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    {includeCaptcha &&
+      <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    }
   </head>
   <Header />
   <main>

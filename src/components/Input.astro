@@ -10,7 +10,7 @@ const { id, label, type, placeholder } = Astro.props;
 
 <div>
   <label for={id} class="mb-1 block text-sm font-medium text-zinc-400">
-    Email
+    {label}
   </label>
   <div class="relative">
     {
@@ -39,6 +39,7 @@ const { id, label, type, placeholder } = Astro.props;
     <input
       type={type}
       id={id}
+      name={id}
       class="block w-full rounded-md border-zinc-500 pl-10 bg-transparent placeholder-zinc-500 text-zinc-300"
       placeholder={placeholder}
     />
