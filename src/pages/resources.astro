@@ -3,20 +3,17 @@ import Accordion from "../components/Accordion.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ResourceCategory, { type Resource } from "../components/ResourceCategory.astro";
 
-const crisisNational: Resource[] = [
+const crisis: Resource[] = [
   { label: "Suicide and Crisis Lifeline (call or text 988)" },
+  { label: "Dane County Crisis Line (608-280-2600)" },
+  { label: "UHS Crisis Line (608-265-5600, option 9)" },
+  { label: "Dane County Rape Crisis Center (608-251-7273)", url: "https://www.danecountyrcc.org" },
   { label: "SAMHSA (Substance Abuse and Mental Health Services Administration)", url: "https://www.samhsa.gov" },
   { label: "National Helpline (1-800-662-4357)" },
   { label: "Disaster/Distress Hotline (1-800-985-5990)" },
   { label: "Domestic Abuse Intervention Services Crisis Hotline (608-251-4445)", url: "http://www.abuseintervention.org" },
-  { label: "The Trevor Project (call 866-488-7386 text “START” to 678678)", url: "https://www.thetrevorproject.org/" },
+  { label: "The Trevor Project (LGBTQIA+ Lifeline) (call 866-488-7386 text “START” to 678678)", url: "https://www.thetrevorproject.org/" },
   { label: "Trans Lifeline (877-565-8860)" },
-]
-
-const crisisLocal: Resource[] = [
-  { label: "Dane County Crisis Line (608-280-2600)" },
-  { label: "UHS Crisis Line (608-265-5600, option 9)" },
-  { label: "Dane County Rape Crisis Center (608-251-7273)", url: "https://www.danecountyrcc.org" }
 ]
 
 const academicNational: Resource[] = [
@@ -78,6 +75,18 @@ const griefLocal: Resource[] = [
   { label: "FindHelp", url: "https://www.findhelp.org/care/bereavement--madison-wi" },
 ];
 
+const discriminationNational: Resource[] = [
+  { label: "AAKOMA Project", url: "https://aakomaproject.org/" },
+  { label: "The Steve Fund (mental health support for people of color)", url: "https://stevefund.org/" },
+  { label: "BIPOC Mental Health Resources", url: "https://www.thementalhealthcoalition.org/wp-content/uploads/2020/07/BIPOC-Mental-Health-Resources.pdf" },
+  { label: "Race Forward", url: "https://www.raceforward.org/" },
+  { label: "Black Lives Matter", url: "https://blacklivesmatter.com/" },
+  { label: "Stop AAPI Hate", url: "https://stopaapihate.org/" },
+  { label: "Lakota People’s Law Project", url: "https://lakotalaw.org/resources/native-lives-matter" },
+  { label: "Center for Native American Youth", url: "https://www.aspeninstitute.org/programs/center-for-native-american-youth/" },
+  { label: "NAACP", url: "https://naacp.org/" },
+];
+
 const discriminationLocal: Resource[] = [
   { label: "UW-Madison Bias Reporting", url: "https://doso.students.wisc.edu/report-an-issue/bias-or-hate-reporting/" },
   { label: "UWPD", url: "https://uwpd.wisc.edu/" },
@@ -100,27 +109,27 @@ const discriminationLocal: Resource[] = [
     <!-- This should probably be refactored so that opening an accordion only affects the height of its column. -->
     <div class="flex flex-col items-center gap-6 max-w-2xl mx-auto sm:items-start sm:grid sm:grid-cols-12 sm:max-w-4xl my-16 text-left">
       <Accordion summary="🚨 Crisis Resources 🚨">
-        <ResourceCategory category="National Resources" resources={crisisNational} />
-        <ResourceCategory category="Local/Campus Resources" resources={crisisLocal} />
+        <ResourceCategory category="Resources" resources={crisis} />
       </Accordion>
       <Accordion summary="Academics">
-        <ResourceCategory category="National Resources" resources={academicNational} />
         <ResourceCategory category="Local/Campus Resources" resources={academicLocal} />
+        <ResourceCategory category="National Resources" resources={academicNational} />
       </Accordion>
       <Accordion summary="Mental Health">
-        <ResourceCategory category="National Resources" resources={mentalHealthNational} />
         <ResourceCategory category="Local/Campus Resources" resources={mentalHealthLocal} />
+        <ResourceCategory category="National Resources" resources={mentalHealthNational} />
       </Accordion>
       <Accordion summary="LGBTQIA+">
-        <ResourceCategory category="National Resources" resources={lgbtqiaNational} />
         <ResourceCategory category="Local/Campus Resources" resources={lgbtqiaLocal} />
+        <ResourceCategory category="National Resources" resources={lgbtqiaNational} />
       </Accordion>
       <Accordion summary="Death and Grief">
-        <ResourceCategory category="National Resources" resources={griefNational} />
         <ResourceCategory category="Local/Campus Resources" resources={griefLocal} />
+        <ResourceCategory category="National Resources" resources={griefNational} />
       </Accordion>
       <Accordion summary="Discrimination">
         <ResourceCategory category="Local/Campus Resources" resources={discriminationLocal} />
+        <ResourceCategory category="National Resources" resources={discriminationNational} />
       </Accordion>
     </div>
   </div>
