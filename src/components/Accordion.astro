@@ -8,7 +8,5 @@ const { summary } = Astro.props;
 
 <details class="bg-zinc-800 p-4 rounded-lg w-full sm:col-span-6">
   <summary class="text-xl text-zinc-200 font-semibold">{summary}</summary>
-  <p class="text-lg text-zinc-200 mt-3">
-    <slot />
-  </p>
+  <slot />
 </details>

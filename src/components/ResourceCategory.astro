@@ -1,0 +1,30 @@
+---
+export type Resource = {
+  label: string;
+  url?: string;
+};
+
+interface Props {
+  category: string;
+  resources: Resource[];
+}
+
+const { category, resources } = Astro.props;
+---
+
+<h3 class="text-lg font-bold text-zinc-200 mt-3">{category}</h3>
+<ul class="text-lg text-zinc-200 list-disc list-inside">
+  {
+    resources.map((resource) => {
+      if (resource.url) {
+        return (
+          <a href={resource.url}>
+            <li class="underline">{resource.label}</li>
+          </a>
+        );
+      } else {
+        return <li>{resource.label}</li>;
+      }
+    })
+  }
+</ul>

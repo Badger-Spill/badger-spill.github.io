@@ -1,6 +1,92 @@
 ---
 import Accordion from "../components/Accordion.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import ResourceCategory, { type Resource } from "../components/ResourceCategory.astro";
+
+const crisisNational: Resource[] = [
+  { label: "Suicide and Crisis Lifeline (call or text 988)" },
+  { label: "SAMHSA (Substance Abuse and Mental Health Services Administration)", url: "https://www.samhsa.gov" },
+  { label: "National Helpline (1-800-662-4357)" },
+  { label: "Disaster/Distress Hotline (1-800-985-5990)" },
+  { label: "Domestic Abuse Intervention Services Crisis Hotline (608-251-4445)", url: "http://www.abuseintervention.org" },
+  { label: "The Trevor Project (call 866-488-7386 text “START” to 678678)", url: "https://www.thetrevorproject.org/" },
+  { label: "Trans Lifeline (877-565-8860)" },
+]
+
+const crisisLocal: Resource[] = [
+  { label: "Dane County Crisis Line (608-280-2600)" },
+  { label: "UHS Crisis Line (608-265-5600, option 9)" },
+  { label: "Dane County Rape Crisis Center (608-251-7273)", url: "https://www.danecountyrcc.org" }
+]
+
+const academicNational: Resource[] = [
+  { label: "Rate My Professor", url: "https://www.ratemyprofessors.com/" },
+  { label: "Chegg", url: "https://www.chegg.com/" }
+]
+
+const academicLocal: Resource[] = [
+  { label: "L&S Career Center", url: "https://successworks.wisc.edu/" },
+  { label: "UHS Counseling", url: "https://www.uhs.wisc.edu/mental-health/individual/" },
+  { label: "Greater University Tutoring Services (GUTS)", url: "https://www.guts.wisc.edu/" },
+  { label: "Chemistry Learning Center", url: "https://www.chem.wisc.edu/areas/clc/" },
+  { label: "Physics Learning Center", url: "https://www.physics.wisc.edu/plc" },
+  { label: "The Writing Center", url: "https://writing.wisc.edu/" },
+  { label: "MadGrades", url: "https://madgrades.com/" },
+  { label: "Career Services", url: "https://careers.wisc.edu" },
+  { label: "Career and Education Planning", url: "https://acsss.wisc.edu/career-and-educational-planning/" },
+  { label: "Business Career Services", url: "https://business.wisc.edu/undergraduate/careers/" },
+  { label: "Study Abroad", url: "https://www.studyabroad.wisc.edu/" },
+]
+
+const mentalHealthNational: Resource[] = [
+  { label: "National Institute for Mental Health", url: "https://www.nimh.nih.gov/health" },
+  { label: "National Aliance on Mental Illness", url: "https://www.nami.org/Home" },
+  { label: "National Institute of Alcohol Abuse and Alcoholism", url: "https://www.niaaa.nih.gov/" },
+  { label: "BIPOC Mental Health Resources", url: "https://www.thementalhealthcoalition.org/wp-content/uploads/2020/07/BIPOC-Mental-Health-Resources.pdf" },
+  { label: "The Steve Fund (mental health support for people of color)", url: "https://stevefund.org/" },
+]
+
+const mentalHealthLocal: Resource[] = [
+  { label: "UHS Mental Health Counseling", url: "https://www.uhs.wisc.edu/mental-health/" },
+  { label: "UHS Let’s Talk", url: "https://www.uhs.wisc.edu/wellness/lets-talk/" },
+  { label: "NAMI UW", url: "https://www.namiuw.org/" },
+];
+
+const lgbtqiaNational: Resource[] = [
+  { label: "LGBT National Help Center (888-843-4564)", url: "https://lgbthotline.org/" },
+  { label: "The Trevor Project (866-488-7386)", url: "https://www.thetrevorproject.org/" },
+  { label: "Trans Lifeline (888-843-4564)" },
+  { label: "PFLAG", url: "https://pflag.org/" },
+  { label: "It Gets Better Project", url: "https://itgetsbetter.org/" },
+];
+
+const lgbtqiaLocal: Resource[] = [
+  { label: "Gender and Sexuality Campus Center", url: "https://lgbt.wisc.edu/" },
+  { label: "OutReach Community Center", url: "https://www.outreachmadisonlgbt.org/" },
+  { label: "UW Report Bias", url: "https://doso.students.wisc.edu/report-an-issue/bias-or-hate-reporting/" },
+];
+
+const griefNational: Resource[] = [
+  { label: "Grief Share", url: "https://www.griefshare.org/" },
+  { label: "Agrace Grief Support", url: "https://www.agrace.org/grief-support/griefgroups/" },
+];
+
+const griefLocal: Resource[] = [
+  { label: "UHS Mental Health Counseling", url: "https://www.uhs.wisc.edu/mental-health/" },
+  { label: "UHS Group Counseling", url: "https://www.uhs.wisc.edu/mental-health/group-counseling/" },
+  { label: "UHS Resources", url: "https://www.uhs.wisc.edu/grief-resources/" },
+  { label: "FindHelp", url: "https://www.findhelp.org/care/bereavement--madison-wi" },
+];
+
+const discriminationLocal: Resource[] = [
+  { label: "UW-Madison Bias Reporting", url: "https://doso.students.wisc.edu/report-an-issue/bias-or-hate-reporting/" },
+  { label: "UWPD", url: "https://uwpd.wisc.edu/" },
+  { label: "Multicultural Student Center", url: "https://msc.wisc.edu/identity-centers/black-cultural-center/" },
+  { label: "MECHA Student Organization", url: "https://win.wisc.edu/organization/mecha" },
+  { label: "Office for Equity and Diversity", url: "https://employeedisabilities.wisc.edu/" },
+  { label: "International Student Services", url: "https://iss.wisc.edu/" },
+];
+
 ---
 
 <BaseLayout>
@@ -13,12 +99,29 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </h1>
     <!-- This should probably be refactored so that opening an accordion only affects the height of its column. -->
     <div class="flex flex-col items-center gap-6 max-w-2xl mx-auto sm:items-start sm:grid sm:grid-cols-12 sm:max-w-4xl my-16 text-left">
-      <Accordion summary="🚨 Crisis Resources 🚨">Hello</Accordion>
-      <Accordion summary="Academics">Hello</Accordion>
-      <Accordion summary="Mental Health">Hello</Accordion>
-      <Accordion summary="LGBTQIA+">Hello</Accordion>
-      <Accordion summary="Death and Grief">Hello</Accordion>
-      <Accordion summary="Discrimination">Hello</Accordion>
+      <Accordion summary="🚨 Crisis Resources 🚨">
+        <ResourceCategory category="National Resources" resources={crisisNational} />
+        <ResourceCategory category="Local/Campus Resources" resources={crisisLocal} />
+      </Accordion>
+      <Accordion summary="Academics">
+        <ResourceCategory category="National Resources" resources={academicNational} />
+        <ResourceCategory category="Local/Campus Resources" resources={academicLocal} />
+      </Accordion>
+      <Accordion summary="Mental Health">
+        <ResourceCategory category="National Resources" resources={mentalHealthNational} />
+        <ResourceCategory category="Local/Campus Resources" resources={mentalHealthLocal} />
+      </Accordion>
+      <Accordion summary="LGBTQIA+">
+        <ResourceCategory category="National Resources" resources={lgbtqiaNational} />
+        <ResourceCategory category="Local/Campus Resources" resources={lgbtqiaLocal} />
+      </Accordion>
+      <Accordion summary="Death and Grief">
+        <ResourceCategory category="National Resources" resources={griefNational} />
+        <ResourceCategory category="Local/Campus Resources" resources={griefLocal} />
+      </Accordion>
+      <Accordion summary="Discrimination">
+        <ResourceCategory category="Local/Campus Resources" resources={discriminationLocal} />
+      </Accordion>
     </div>
   </div>
 </BaseLayout>
