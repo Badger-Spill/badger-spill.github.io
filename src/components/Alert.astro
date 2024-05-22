@@ -1,0 +1,25 @@
+---
+type AlertType = "primary" | "danger"
+interface Props {
+  variant?: AlertType;
+}
+
+const { variant } = Astro.props;
+
+function colorString(variant?: AlertType) {
+  switch (variant) {
+    case "danger":
+      return "border-red-500";
+    case "primary":
+    default:
+      return "border-zinc-500";
+  }
+}
+
+// There is probably a better way to do this....
+const styles = "w-full max-w-prose border rounded-lg p-3 text-zinc-200 lg:max-w-prose-xl lg:text-xl lg:p-4 " + colorString(variant);
+---
+
+<div class={styles}>
+  <slot />
+</div>

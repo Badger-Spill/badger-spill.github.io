@@ -1,4 +1,5 @@
 ---
+import Alert from "../components/Alert.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 type TrainingDate = {
@@ -19,13 +20,15 @@ const trainingDates: TrainingDate[] = [
   <h1 class="text-3xl font-bold tracking-tight text-zinc-100 sm:text-5xl p-1 text-center">
     Get Involved
   </h1>
-  <div class="w-full max-w-prose mx-auto border rounded-lg border-zinc-500 p-3 mt-6 text-zinc-200 lg:max-w-prose-xl lg:text-xl lg:p-4">
-    <h3 class="font-bold mb-3">Upcoming student supporter trainings:</h4>
-    <ul class="list-disc list-inside">
-      {trainingDates.map((trainingDate) => {
-        return <li>{trainingDate.date}, <a class="underline" href={trainingDate.meetingUrl}>Link</a></li>
-      })}
-    </ul>
+  <div class="flex justify-center mt-6">
+    <Alert>
+      <h3 class="font-bold mb-3">Upcoming student supporter trainings:</h4>
+      <ul class="list-disc list-inside">
+        {trainingDates.map((trainingDate) => {
+          return <li>{trainingDate.date}, <a class="underline" href={trainingDate.meetingUrl}>Link</a></li>
+        })}
+      </ul>
+    </Alert>
   </div>
   <article class="mx-auto mt-6 prose prose-zinc prose-invert lg:prose-xl">
     <h3>How do I sign up to volunteer?</h3>

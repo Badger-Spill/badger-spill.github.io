@@ -5,6 +5,10 @@ import madisonImage from "../assets/madison.jpg";
 import Input from "../components/Input.astro";
 import Textarea from "../components/Textarea.astro";
 import Button from "../components/Button.astro";
+import Alert from "../components/Alert.astro";
+
+const FORM_SUBMISSIONS_DISABLED = true;
+const DISABLED_MESSAGE = "We do not accept spills during the summer months, but you're welcome to visit our resources page! For inquiries, email president.badgerspill@gmail.com.";
 ---
 
 <BaseLayout includeCaptcha={true}>
@@ -105,38 +109,47 @@ import Button from "../components/Button.astro";
       </div>
     </div>
   </section>
-  <form id="spill-form" class="mt-16 mb-8">
-    <div class="w-full sm:max-w-sm">
-      <Input
-        id="email"
-        label="Wisc Email"
-        type="email"
-        placeholder="you@wisc.edu"
-      />
+  {FORM_SUBMISSIONS_DISABLED &&
+    <div class="flex justify-center mt-8">
+      <Alert>
+        <p>{DISABLED_MESSAGE}</p>
+      </Alert>
     </div>
-    <div class="mt-4">
-      <Textarea
-        id="message"
-        label="Message"
-        placeholder="Write your message here. A volunteer badger will reply to your anonymous message!"
-      />
-    </div>
-    <p class="mt-2 text-xs text-zinc-400">
-      Your message will be sent anonymously. Badger Spill reserves the right to
-      break confidentiality under circumstances where we believe your safety or
-      the safety of others may be at risk. By submitting this form, you agree to
-      our <a href="/terms-of-use" class="underline">Terms of Use</a>.
-    </p>
-    <div
-      class="flex flex-col mt-3 sm:mt-6 sm:flex-row sm:items-center sm:justify-between"
-    >
-      <div
-        class="g-recaptcha mb-3 sm:mb-0"
-        data-sitekey="6LcduFYpAAAAAAHWZthJQ2MXuJcS5x6TpLCEgBco"
-      >
+  }
+  {!FORM_SUBMISSIONS_DISABLED &&
+    <form id="spill-form" class="mt-16 mb-8">
+      <div class="w-full sm:max-w-sm">
+        <Input
+          id="email"
+          label="Wisc Email"
+          type="email"
+          placeholder="you@wisc.edu"
+        />
       </div>
-      <Button id="submit" label="Spill" type="submit" />
-    </div>
-    <p id="submit-message" class="mt-3 text-xs"></p>
-  </form>
+      <div class="mt-4">
+        <Textarea
+          id="message"
+          label="Message"
+          placeholder="Write your message here. A volunteer badger will reply to your anonymous message!"
+        />
+      </div>
+      <p class="mt-2 text-xs text-zinc-400">
+        Your message will be sent anonymously. Badger Spill reserves the right to
+        break confidentiality under circumstances where we believe your safety or
+        the safety of others may be at risk. By submitting this form, you agree to
+        our <a href="/terms-of-use" class="underline">Terms of Use</a>.
+      </p>
+      <div
+        class="flex flex-col mt-3 sm:mt-6 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <div
+          class="g-recaptcha mb-3 sm:mb-0"
+          data-sitekey="6LcduFYpAAAAAAHWZthJQ2MXuJcS5x6TpLCEgBco"
+        >
+        </div>
+        <Button id="submit" label="Spill" type="submit" />
+      </div>
+      <p id="submit-message" class="mt-3 text-xs"></p>
+    </form>
+  }
 </BaseLayout>
