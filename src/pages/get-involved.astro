@@ -23,11 +23,12 @@ const trainingDates: TrainingDate[] = [
   <div class="flex justify-center mt-6">
     <Alert>
       <h3 class="font-bold mb-3">Upcoming student supporter trainings:</h4>
-      <ul class="list-disc list-inside">
+      <ul class="list-disc list-inside mb-3">
         {trainingDates.map((trainingDate) => {
           return <li>{trainingDate.date}, <a class="underline" href={trainingDate.meetingUrl}>Link</a></li>
         })}
       </ul>
+      <a class="underline" href="https://www.instagram.com/badger.spill/">Follow our Instagram for the most up-to-date information on training dates!</a>
     </Alert>
   </div>
   <article class="mx-auto mt-6 prose prose-zinc prose-invert lg:prose-xl">
