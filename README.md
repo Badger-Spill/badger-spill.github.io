@@ -35,3 +35,7 @@ To run a development server with hot-reloading, run the command ```npm run dev``
 ### Deploying
 
 This repository uses Github Actions to automatically deploy this website to Github Pages anytime new commmits are received on the main branch. It is highly recommended that you preview your changes locally with ```npm run dev``` before pushing code to the main branch of this repository.
+
+## License
+
+This program is free software licensed under the GNU AGPL v3.
