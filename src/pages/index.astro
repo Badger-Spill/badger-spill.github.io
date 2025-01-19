@@ -69,7 +69,10 @@ const DISABLED_MESSAGE = "We do not accept spills during the summer months, but 
           formDataObject[key] = value.toString();
         });
 
-        fetch("https://server.thebadgerspill.com/spill", {
+        const isDev = import.meta.env.DEV;
+        const formUrl = isDev ? "http://localhost:8080/spill" : "https://server.thebadgerspill.com/spill"
+
+        fetch(formUrl, {
           method: "POST",
           body: JSON.stringify(formDataObject),
           headers: {
