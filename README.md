@@ -39,3 +39,17 @@ This repository uses Github Actions to automatically deploy this website to Gith
 ## License
 
 This program is free software licensed under the GNU AGPL v3.
+
+The full terms of the license are available in the ``LICENSE`` file. The key takeaway is that if you host this software over the web, you will be required to open source your code to users. At Badger Spill, we felt that this was the best decision for three reasons:
+
+1. Open source means that anyone can get involved
+
+Open source lowers the barrier to entry for contributing. This allows community members to propose changes and fix bugs. It also means that people get credited publicly for their work. This is great for a resume or portfolio, and it gives other people motivation to contribute. Open sourcing our code also ensures there is a record of the source code even if a primary contributor leaves. This extends the lifetime of the software.
+
+2. Open source via GitHub makes version control a breeze
+
+Prior to open source, Badger Spill was sharing .zip files between contributors. This is a very messy way of sharing code, and it meant that changes were hard to track and reconcile. Using GitHub makes our developer workflow cleaner and allows future maintainers to see the history of the project's files.
+
+3. This isn't a commercial product--it's a community good
+
+Lastly, and most significantly, this isn't a piece of software that will ever be sold. It's a passion project by the student community and for the student community. There's no reason that we need to keep this code private. We stand only to gain by making our work public. Open source aligns with these values.
