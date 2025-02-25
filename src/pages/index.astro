@@ -70,7 +70,7 @@ const DISABLED_MESSAGE = "We do not accept spills during the summer months, but 
         });
 
         const isDev = import.meta.env.DEV;
-        const formUrl = isDev ? "http://localhost:8080/spill" : "https://server.thebadgerspill.com/spill"
+        const formUrl = isDev ? "http://localhost:8787/spill" : "https://worker.thebadgerspill.com/spill"
 
         fetch(formUrl, {
           method: "POST",
