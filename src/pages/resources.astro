@@ -68,6 +68,23 @@ const mentalHealthLocal: Resource[] = [
   { label: "NAMI UW", url: "https://www.namiuw.org/" },
 ];
 
+export const bipocNational: Resource[] = [
+  { label: "College Rover article on BIPOC students and resources", url: "https://collegerover.com/campus-library/news/299/bipoc-students" },
+  { label: "BIPOC Mental Health Resources from the Mental Health Coalition", url: "https://www.thementalhealthcoalition.org/wp-content/uploads/2020/07/BIPOC-Mental-Health-Resources.pdf" },
+  { label: "Mental Health America National BIPOC Resources", url: "https://www.mhanational.org/bipoc" },
+  { label: "LifeAct LGBTQ+ and BIPOC Mental Health Resources", url: "https://www.lifeact.org/for-students/lgbtq-and-bipoc-mental-health-resources" },
+  { label: "Melanin and Mental Health, therapy and support for Black and Latine/Hispanic individuals", url: "https://www.melaninandmentalhealth.com/" },
+  { label: "Black Lives Matter", url: "https://blacklivesmatter.com/" },
+  { label: "Center for Native American Youth", url: "https://www.cnay.org/" }
+];
+
+export const bipocLocal: Resource[] = [
+  { label: "Multicultural Student Center", url: "https://www.msc.wisc.edu" },
+  { label: "Diversity and Equity at UW", url: "https://diversity.wisc.edu/" },
+  { label: "Center for Cultural Enrichment", url: "https://www.housing.wisc.edu/undergraduate/experience/inclusivity/#cce" },
+  { label: "Join student orgs to meet other people with similar backgrounds, religions, and cultures (Wisconsin Involvement Network)", url: "https://win.wisc.edu/" }
+];
+
 const lgbtqiaNational: Resource[] = [
   { label: "LGBT National Help Center (888-843-4564)", url: "https://lgbthotline.org/" },
   { label: "The Trevor Project (866-488-7386)", url: "https://www.thetrevorproject.org/" },
@@ -137,6 +154,10 @@ const discriminationLocal: Resource[] = [
       <Accordion summary="Mental Health">
         <ResourceCategory category="Local/Campus Resources" resources={mentalHealthLocal} />
         <ResourceCategory category="National Resources" resources={mentalHealthNational} />
+      </Accordion>
+      <Accordion summary="BIPOC">
+        <ResourceCategory category="Local/Campus Resources" resources={bipocLocal} />
+        <ResourceCategory category="National Resources" resources={bipocNational} />
       </Accordion>
       <Accordion summary="LGBTQIA+">
         <ResourceCategory category="Local/Campus Resources" resources={lgbtqiaLocal} />
