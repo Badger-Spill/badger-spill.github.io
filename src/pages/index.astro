@@ -26,7 +26,7 @@ import Textarea from "../components/Textarea.astro";
 import Button from "../components/Button.astro";
 import Alert from "../components/Alert.astro";
 
-const FORM_SUBMISSIONS_DISABLED = false;
+const FORM_SUBMISSIONS_DISABLED = true;
 const DISABLED_MESSAGE = "Badger Spill is on break and not currently accepting spills. You're welcome to visit our resources page! For inquiries, email president.badgerspill@gmail.com.";
 ---
 
@@ -132,11 +132,7 @@ const DISABLED_MESSAGE = "Badger Spill is on break and not currently accepting s
     </div>
   </section>
   {FORM_SUBMISSIONS_DISABLED &&
-    <div class="flex justify-center mt-8">
-      <Alert>
-        <p>{DISABLED_MESSAGE}</p>
-      </Alert>
-    </div>
+    <p class="mt-8 text-zinc-200 lg:text-xl">{DISABLED_MESSAGE}</p>
   }
   {!FORM_SUBMISSIONS_DISABLED &&
     <form id="spill-form" class="mt-16 mb-8">
