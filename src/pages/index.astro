@@ -55,8 +55,8 @@ const DISABLED_MESSAGE = "Badger Spill is on break and not currently accepting s
     }
 
     document
-      .getElementById("spill-form")!
-      .addEventListener("submit", function (event) {
+      .getElementById("spill-form")
+      ?.addEventListener("submit", function (event) {
         // Prevent the default form submission behavior
         event.preventDefault();
         if (event.target == null) return;
