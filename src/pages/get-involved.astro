@@ -21,41 +21,37 @@
 import Alert from "../components/Alert.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-type TrainingDate = {
-  date: string,
-  meetingUrl: string
-}
-
-const trainingDates: TrainingDate[] = [
-  { date: "2/12/2026, 5:30PM-6:00PM", meetingUrl: "https://meet.google.com/ktu-pirw-cpi" },
-  { date: "2/25/2026, 4:45-5:15PM", meetingUrl: "https://meet.google.com/ktu-pirw-cpi" },
-  { date: "3/9/2026, 7:00PM-7:30PM", meetingUrl: "https://meet.google.com/ktu-pirw-cpi" },
-  { date: "3/25/2026, 6:00PM-6:30PM", meetingUrl: "https://meet.google.com/ktu-pirw-cpi" },
-  { date: "4/9/2026, 6:30PM-7:00PM", meetingUrl: "https://meet.google.com/ktu-pirw-cpi" },
-  { date: "4/22/2026, 7:30-8:00PM", meetingUrl: "https://meet.google.com/ktu-pirw-cpi" },
+const trainingDates: string[] = [
+  "Training #1 — September 3rd @ 6-7PM; Sac Caucus Room",
+  "Training #2 — September 21st @ 5-6PM; Sac Caucus Room",
+  "Training #3 — September 30th @ 5-6PM; Sac Caucus Room 4210",
+  "Training #4 — October 21st @ 5-6PM; Sac Hearing Room",
+  "Training #5 — November 16th @ 5:30-6:30PM; Sac Caucus Room 4001",
 ];
 ---
 <BaseLayout>
-  <h1 class="text-3xl font-bold tracking-tight text-zinc-100 sm:text-5xl p-1 text-center">
+  <h1 class="font-display text-3xl font-bold tracking-tight text-[#43729a] sm:text-5xl p-1 text-center">
     Get Involved
   </h1>
   <div class="flex justify-center mt-6">
     <Alert>
-      <h3 class="font-bold mb-3">Upcoming student supporter trainings:</h4>
-      <ul class="list-disc list-inside mb-3">
-        {trainingDates.map((trainingDate) => {
-          return <li>{trainingDate.date}, <a class="underline" href={trainingDate.meetingUrl}>Link</a></li>
-        })}
+      <h3 class="font-bold mb-3 text-[#43729a]">Sign up here to RSVP to an upcoming Badger SPILL training!</h3>
+      <p class="mb-4">
+        <a class="underline text-[#43729a] font-semibold" href="https://docs.google.com/forms/d/e/1FAIpQLSeCvhSSISZZmUfP462VtmI9F-T2L9PKjAkoa72F6WHzBykdhA/viewform">Click here to RSVP →</a>
+      </p>
+      <h3 class="font-bold mb-3 text-[#43729a]">Here are our training dates! These will be finalized early/mid-August 😊</h3>
+      <ul class="list-disc list-inside mb-3 text-[#43729a]">
+        {trainingDates.map((date) => <li>{date}</li>)}
       </ul>
-      <a class="underline" href="https://www.instagram.com/badger.spill/">Follow our Instagram for the most up-to-date information on training dates!</a>
+      <a class="underline text-[#43729a]" href="https://www.instagram.com/badger.spill/">Follow our Instagram for the most up-to-date information on training dates!</a>
     </Alert>
   </div>
-  <article class="mx-auto mt-6 prose prose-zinc prose-invert lg:prose-xl">
-    <h3>How do I sign up to volunteer?</h3>
-    <p>We'd love to hear from you! If you are interested in joining or have questions, please email <a href="mailto:membership.badgerspill@gmail.com">membership.badgerspill@gmail.com</a>. If you are an RSO/organization leader interested in receiving student supporter training for your group, please fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLScKKnA2r2mnGg5bRGRgXnfucWe-ghcgKlbQEcuW_f2__5Iq8A/viewform">this request form</a> to be contacted by one of our trainers.</p>
-    <h3>What is a student supporter?</h3>
-    <p>A student supporter is a volunteer student who has gone through the training necessary to give clear, empathetic, and empowering support. They confidentially fill out a past struggles inventory that allows us to send them spills based on their prior experience and comfort with particular topics. These are fellow peers on campus who have decided that they want to help other students who are struggling by responding to several emails each semester.</p>
-    <h3>What does this commitment entail?</h3>
-    <p>Because Badger Spill doesn't have any regular meetings, being a student supporter is a relatively painless community service opportunity. Student supporters typically receive approximately 5-10 emails each semester, and commit to responding to each within 24 hours. It's a great way to directly benefit other people on campus who are struggling!</p>
+  <article class="mx-auto mt-6 prose prose-zinc lg:prose-xl">
+    <h3 class="font-display text-[#43729a]">How do I sign up to volunteer?</h3>
+    <p class="text-[#43729a]">We'd love to hear from you! If you are interested in joining or have questions, please email <a href="mailto:membership.badgerspill@gmail.com" class="text-[#43729a] underline">membership.badgerspill@gmail.com</a>. If you are an RSO/organization leader interested in receiving student supporter training for your group, please fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLScKKnA2r2mnGg5bRGRgXnfucWe-ghcgKlbQEcuW_f2__5Iq8A/viewform" class="text-[#43729a] underline">this request form</a> to be contacted by one of our trainers.</p>
+    <h3 class="font-display text-[#43729a]">What is a student supporter?</h3>
+    <p class="text-[#43729a]">A student supporter is a volunteer student who has gone through the training necessary to give clear, empathetic, and empowering support. They confidentially fill out a past struggles inventory that allows us to send them spills based on their prior experience and comfort with particular topics. These are fellow peers on campus who have decided that they want to help other students who are struggling by responding to several emails each semester.</p>
+    <h3 class="font-display text-[#43729a]">What does this commitment entail?</h3>
+    <p class="text-[#43729a]">Because Badger Spill doesn't have any regular meetings, being a student supporter is a relatively painless community service opportunity. Student supporters typically receive approximately 5-10 emails each semester, and commit to responding to each within 24 hours. It's a great way to directly benefit other people on campus who are struggling!</p>
   </article>
 </BaseLayout>

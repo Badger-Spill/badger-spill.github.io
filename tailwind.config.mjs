@@ -8,15 +8,31 @@ export default {
   theme: {
     extend: {
       // Set font family
-      fontFamily: {
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        fontFamily: {
+          sans: ["Nunito Sans", ...defaultTheme.fontFamily.sans],
+          display: ["Fredoka", ...defaultTheme.fontFamily.sans],
+        },
+        typography: {
+      DEFAULT: {
+      css: {
+      'h1, h2, h3, h4': {
+        fontFamily: 'Fredoka, sans-serif',
       },
+    },
+  },
+},
       // Set theme colors
       colors: {
-        primary: colors.cyan,
+        primary: {
+          200: '#a8c6e0',
+          400: '#43729a',
+          600: '#2c4f6b',
+          700: '#1f3a4f',
+        },
         secondary: colors.zinc,
       },
     },
   },
   plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
 };
+

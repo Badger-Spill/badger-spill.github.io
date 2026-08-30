@@ -25,7 +25,9 @@ interface Props {
 const { summary } = Astro.props;
 ---
 
-<details class="bg-zinc-800 p-4 rounded-lg w-full sm:col-span-6">
-  <summary class="text-xl text-zinc-200 font-semibold">{summary}</summary>
-  <slot />
+<details class="bg-[#43729a] p-4 rounded-lg w-full">
+  <summary class="text-xl font-semibold" style="color: white !important;">{summary}</summary>
+  <div style="color: white !important;">
+    <slot />
+  </div>
 </details>

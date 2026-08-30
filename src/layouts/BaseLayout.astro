@@ -28,7 +28,7 @@ interface Props {
 const { includeCaptcha } = Astro.props;
 ---
 
-<html class="bg-zinc-900 mx-auto max-w-[85rem] px-4 sm:px-8">
+<html class="bg-[#f9e8b2] mx-auto max-w-[85rem] px-4 sm:px-8">
   <head>
     <title>Badger Spill</title>
     <meta charset="utf-8">
@@ -36,11 +36,19 @@ const { includeCaptcha } = Astro.props;
     <meta name="description" content="Providing peer support for UW-Madison students.">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/png" href="/favicon.png">
+    <style>
+    body {
+      color: #43729a;
+    }
+
+    </style>
     {includeCaptcha &&
       <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     }
+    
+
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-K0VT4CXJPQ"></script>

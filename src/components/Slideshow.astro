@@ -1,0 +1,62 @@
+astro
+---
+import { Image } from "astro:assets";
+
+interface Props {
+  images: { src: ImageMetadata; alt: string }[];
+}
+
+const { images } = Astro.props;
+---
+
+<div class="relative h-[46rem] w-full rounded-xl overflow-hidden" id="slideshow">
+  {images.map((img, i) => (
+    <Image
+      src={img.src}
+      alt={img.alt}
+      class={`absolute inset-0 h-full w-full object-cover transition-opacity duration-700 ${i === 0 ? "opacity-100" : "opacity-0"}`}
+      data-slide
+    />
+  ))}
+  {images.length > 1 && (
+    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
+      {images.map((_, i) => (
+        <button
+          class="h-2.5 w-2.5 rounded-full bg-white/50 transition-colors"
+          data-dot
+          data-index={i}
+          aria-label={`Slide ${i + 1}`}
+        ></button>
+      ))}
+    </div>
+  )}
+</div>
+
+<script>
+  const container = document.getElementById("slideshow");
+  if (container) {
+    const slides = container.querySelectorAll<HTMLElement>("[data-slide]");
+    const dots = container.querySelectorAll<HTMLElement>("[data-dot]");
+    let current = 0;
+
+    function showSlide(index: number) {
+      slides.forEach((s, i) => {
+        s.style.opacity = i === index ? "1" : "0";
+      });
+      dots.forEach((d, i) => {
+        d.style.backgroundColor = i === index ? "white" : "rgba(255,255,255,0.5)";
+      });
+      current = index;
+    }
+
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        showSlide(parseInt(dot.dataset.index!));
+      });
+    });
+
+    if (slides.length > 1) {
+      setInterval(() => showSlide((current + 1) % slides.length), 5000);
+    }
+  }
+</script>
