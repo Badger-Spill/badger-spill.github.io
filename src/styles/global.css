@@ -1,0 +1,29 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+
+@theme {
+  --font-sans: "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fredoka", ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary-200: #a8c6e0;
+  --color-primary-400: #43729a;
+  --color-primary-600: #2c4f6b;
+  --color-primary-700: #1f3a4f;
+
+  --color-secondary-50: #fafafa;
+  --color-secondary-100: #f4f4f5;
+  --color-secondary-200: #e4e4e7;
+  --color-secondary-300: #d4d4d8;
+  --color-secondary-400: #a1a1aa;
+  --color-secondary-500: #71717a;
+  --color-secondary-600: #52525b;
+  --color-secondary-700: #3f3f46;
+  --color-secondary-800: #27272a;
+  --color-secondary-900: #18181b;
+  --color-secondary-950: #09090b;
+}
+
+.prose :is(h1, h2, h3, h4) {
+  font-family: var(--font-display);
+}
